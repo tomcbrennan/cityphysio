@@ -22,7 +22,7 @@ if (file_exists($composer_autoload)) {
 
 include 'php/tiny-mce-extend.php';
 if (file_exists(__DIR__ . '/ajax/ajax.php')) {
-    include 'ajax/ajax.php';
+	include 'ajax/ajax.php';
 }
 
 /**
@@ -30,22 +30,24 @@ if (file_exists(__DIR__ . '/ajax/ajax.php')) {
  */
 $helpers = glob(__DIR__ . '/helpers/*/*.php');
 foreach ($helpers as $helper) {
-    if (file_exists($helper)) {
-        include_once $helper;
-    }
+	if (file_exists($helper)) {
+		include_once $helper;
+	}
 }
 
 /**
  * Setup our custom options page
  */
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Site Settings',
-		'menu_title'	=> 'Site Settings',
-		'menu_slug' 	=> 'site-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(
+		array(
+			'page_title' => 'Site Settings',
+			'menu_title' => 'Site Settings',
+			'menu_slug' => 'site-settings',
+			'capability' => 'edit_posts',
+			'redirect' => false
+		)
+	);
 }
 
 /**
@@ -95,7 +97,7 @@ class TomDotCom extends Timber\Site
 		add_filter('timber/context', array($this, 'add_to_context'));
 		add_action('init', array($this, 'register_post_types'));
 		add_action('init', array($this, 'register_taxonomies'));
-        add_action('wp_enqueue_scripts', array($this, 'register_assets'));
+		add_action('wp_enqueue_scripts', array($this, 'register_assets'));
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -107,17 +109,17 @@ class TomDotCom extends Timber\Site
 	{
 	}
 
-    /** This is where you can register custom CSS & JS files. */
-    public function register_assets()
-    {
-	$style_version = filemtime(get_stylesheet_directory() . '/static/style.css') ?: '';
-        $script_version = filemtime(get_stylesheet_directory() . '/static/site.js') ?: '';
+	/** This is where you can register custom CSS & JS files. */
+	public function register_assets()
+	{
+		$style_version = filemtime(get_stylesheet_directory() . '/static/style.css') ?: '';
+		$script_version = filemtime(get_stylesheet_directory() . '/static/site.js') ?: '';
 
-        wp_enqueue_style('tomdotcom', get_stylesheet_directory_uri() . '/static/style.css', false, $style_version);
-        wp_enqueue_script('tomdotcom', get_stylesheet_directory_uri() . '/static/site.js', false, $script_version);
+		wp_enqueue_style('TomDotCom', get_stylesheet_directory_uri() . '/static/style.css', false, $style_version);
+		wp_enqueue_script('TomDotCom', get_stylesheet_directory_uri() . '/static/site.js', false, $script_version);
 
-        // wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/PASTE_PROJECT_ID_HERE.css');
-    }
+		// wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/PASTE_PROJECT_ID_HERE.css');
+	}
 
 	/** This is where you add some context
 	 *
@@ -126,15 +128,15 @@ class TomDotCom extends Timber\Site
 	public function add_to_context($context)
 	{
 		if (function_exists('get_fields')) {
-            $context['options'] = get_fields('options');
-        }
-        // Default menu
-		$context['menu']  = new Timber\Menu();
+			$context['options'] = get_fields('options');
+		}
+		// Default menu
+		$context['menu'] = new Timber\Menu();
 
-        // Other menu's - pass the slug to the Menu(). Eg.
-        // $context['footer_menu'] = new Timber\Menu('footer_menu');
+		// Other menu's - pass the slug to the Menu(). Eg.
+		// $context['footer_menu'] = new Timber\Menu('footer_menu');
 
-		$context['site']  = $this;
+		$context['site'] = $this;
 
 		return $context;
 	}
@@ -162,7 +164,7 @@ class TomDotCom extends Timber\Site
 		 */
 		register_nav_menus(
 			array(
-				'primary' => __('Primary Menu', 'tomdotcom'),
+				'primary' => __('Primary Menu', 'TomDotCom'),
 			)
 		);
 
@@ -175,11 +177,12 @@ class TomDotCom extends Timber\Site
 
 // REMOVE AUTHOR FROM POST SOCIAL EMBEDS
 
-add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
-function disable_embeds_filter_oembed_response_data_( $data ) {
-    unset($data['author_url']);
-    unset($data['author_name']);
-    return $data;
+add_filter('oembed_response_data', 'disable_embeds_filter_oembed_response_data_');
+function disable_embeds_filter_oembed_response_data_($data)
+{
+	unset($data['author_url']);
+	unset($data['author_name']);
+	return $data;
 }
 
 new TomDotCom();

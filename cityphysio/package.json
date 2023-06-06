@@ -8,7 +8,7 @@
 		"build:css-editor": "postcss ./css/editor.css -o ./static/editor.css",
 		"watch:css-app": "postcss ./css/main.css -o ./static/style.css --watch",
 		"watch:css-editor": "postcss ./css/editor.css -o ./static/editor.css --watch",
-		"browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"wp-boilerplate.test\" --host=\"wp-boilerplate.test\" --no-inject-changes --files=\"./\""
+		"browser-sync": "cross-env NODE_ENV=development browser-sync start --proxy \"cityphysio.test\" --host=\"cityphysio.test\" --no-inject-changes --files=\"./\""
 	},
 	"dependencies": {
 		"@tailwindcss/line-clamp": "^0.4.2",
@@ -27,7 +27,6 @@
 		"@tailwindcss/typography": "^0.5.8",
 		"cssnano": "^5.1.14",
 		"esbuild-serve": "^1.0.1",
-		"prettier": "^2.5.1",
 		"prettier-plugin-twig-melody": "^0.4.6",
 		"tailwindcss": "^3.2.1"
 	},
