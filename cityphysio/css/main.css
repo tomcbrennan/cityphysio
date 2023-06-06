@@ -1,0 +1,33 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './accordion.css';
+@import './typography.css';
+@import './forms.css';
+
+.container {
+	@apply max-w-[1366px] 2xl:max-w-[1600px] w-full mx-auto px-6 md:px-10;
+}
+
+@layer components {
+	.container {
+		@apply mx-auto;
+		width: min(calc(100% - 4rem), 1440px);
+	}
+}
+
+[data-menu] {
+	@apply translate-x-full;
+}
+
+.menuIsOpen [data-menu] {
+	@apply translate-x-0;
+}
+
+[data-block] {
+	@apply relative py-12 lg:py-24 2xl:py-36;
+}
+
+[data-block]:first-of-type {
+	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
+}
