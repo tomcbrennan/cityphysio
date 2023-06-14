@@ -5,6 +5,10 @@
 @import './typography.css';
 @import './forms.css';
 
+html, body {
+	@apply overflow-x-hidden;
+}
+
 .container {
 	@apply max-w-[1366px] 2xl:max-w-[1600px] w-full mx-auto px-6 md:px-10;
 }
@@ -24,10 +28,10 @@
 	@apply translate-x-0;
 }
 
-[data-block] {
-	@apply relative py-12 lg:py-24 2xl:py-36;
+section {
+	@apply relative py-12 lg:py-20 2xl:py-32;
 }
 
-[data-block]:first-of-type {
-	@apply pt-0 lg:pt-0 xl:pt-0 2xl:pt-0;
+section:last-of-type {
+	@apply relative !pb-0;
 }

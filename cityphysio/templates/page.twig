@@ -1,11 +1,19 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+	<div class="relative">
+		{% include "icons/blob.twig" with { class: "absolute left-0 top-[25%]" } %}
+		{% if page_builder %}
+			{% for block in page_builder %}
+				<div data-block="{{ block.acf_fc_layout }}">
+					{{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}
+				</div>
+			{% endfor %}
+		{% else %}
+			<section>
+				<h3 class="container text-[#D1D1D1]">No content found.</h3>
+			</section>
+		{% endif %}
+	</div>
 
-	{# Page Builder #}
-	{# Loop through the blocks and load their associated file #}
-		{% for block in page_builder %}
-			<div data-block="{{ block.acf_fc_layout }}"> {{ include("blocks/" ~ block.acf_fc_layout ~ ".twig", ignore_missing = true) }}
-		</div>
-	{% endfor %}
 {% endblock %}

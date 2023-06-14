@@ -1,0 +1,58 @@
+{% extends "base.twig" %}
+
+{% block hero %}
+	<div class="relative h-[500px] md:h-[600px] lg:h-[750px] w-screen bg-brand rounded-b-[50px] lg:rounded-b-[100px] overflow-hidden">
+		{% include 'partial/image.twig' with {
+            image: Image(fields.home_banner.background).src,
+            alt: fields.home_banner.background.alt,
+            class: 'object-cover object-center w-full h-full absolute top-0 left-0'
+        } %}
+		<div class="relative pt-20 container text-center flex flex-col gap-8 h-full text-white items-center justify-center">
+			<h1>Outstanding Care in Perth CBD</h1>
+			<h2 class="text-2xl font-normal">We help you feel better, faster.</h2>
+			<a class="button" href="/our-services">View our services</a>
+		</div>
+	</div>
+
+{% endblock %}
+{% block content %}
+	<section class="introduction relative">
+		{% include "icons/blob.twig" with { class: "absolute left-0 top-[25%]" } %}
+		<div class="container flex max-lg:flex-col gap-10 lg:gap-20">
+			<div data-animate class="block-content w-full">
+				<h3 class="text-brand">City Physiotherapy has been proudly operating in Perth CBD for over
+					<strong>30 years</strong>.</h3>
+				<p>City Physiotherapy provides high quality & prompt treatment in Perth CBD. Our office is located centrally in the CBD on St Georges Tce, near the corner of William St.</p>
+				<p>When you come to City Physiotherapy, you can expect a welcoming, professional environment. Our highly skilled and professional physiotherapists will provide individualised consultations and treatment along with information about the care of your condition to ensure a prompt return to sport & normal activities</p>
+			</div>
+			<div class="bg-white lg:w-1/2 border-2 border-brandBlue rounded-3xl p-8 text-xl flex items-center justify-center">
+				<em>"Our patients expect and deserve optimum care for their injury or pain. We provide this level of care and constantly strive to excel in rendering the best treatment possible to each individual that comes to us.”</em>
+			</div>
+		</div>
+	</section>
+	<section class="links !pt-0">
+		<div class="container">
+			<div class="bg-brand w-full p-8 rounded-3xl flex flex-col gap-8 text-center">
+                <h4 class="text-white">How can we help you?</h4>
+				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
+						<div class="p-6 flex items-center justify-center">{% include "icons/appointment.twig" with { class: "h-20" } %}</div>
+						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Book an Appointment</span>
+					</a>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
+						<div class="p-6 flex items-center justify-center">{% include "icons/services.twig" with { class: "h-20" } %}</div>
+						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Our Services</span>
+					</a>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
+						<div class="p-6 flex items-center justify-center">{% include "icons/team.twig" with { class: "h-20" } %}</div>
+						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Meet the Team</span>
+					</a>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
+						<div class="p-6 flex items-center justify-center">{% include "icons/contact.twig" with { class: "h-20" } %}</div>
+						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Contact Us</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

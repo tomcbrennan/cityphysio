@@ -131,10 +131,8 @@ class TomDotCom extends Timber\Site
 			$context['options'] = get_fields('options');
 		}
 		// Default menu
-		$context['menu'] = new Timber\Menu();
-
-		// Other menu's - pass the slug to the Menu(). Eg.
-		// $context['footer_menu'] = new Timber\Menu('footer_menu');
+		$context['menu'] = new Timber\Menu('primary');
+		$context['footer_menu'] = new Timber\Menu('footer');
 
 		$context['site'] = $this;
 
@@ -165,6 +163,7 @@ class TomDotCom extends Timber\Site
 		register_nav_menus(
 			array(
 				'primary' => __('Primary Menu', 'TomDotCom'),
+				'footer' => __('Footer Menu', 'TomDotCom'),
 			)
 		);
 

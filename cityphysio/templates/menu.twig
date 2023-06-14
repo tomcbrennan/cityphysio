@@ -1,9 +1,9 @@
 {% if menu %}
 	{# Desktop #}
-	<ul class="relative z-10 items-center hidden lg:flex">
+	<ul class="relative z-10 items-center hidden lg:flex gap-10">
 		{% for item in items %}
-			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group p-6">
-				<a target="{{ item.target }}" href="{{ item.link }}" class="border-b-2 border-transparent transition-all duration-200 ease">
+			<li class="{{ item.classes|join(' ') }} relative flex items-center gap-1 group">
+				<a target="{{ item.target }}" href="{{ item.link }}" class="font-heading border-b-2 pb-[1px] border-b-transparent hover:border-b-brandGreen font-medium text-lg text-white transition-all duration-100 ease">
 					{{ item.title }}
 				</a>
 				{% if item.children %}

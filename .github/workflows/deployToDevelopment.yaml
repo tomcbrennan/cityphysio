@@ -36,7 +36,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: ftp.perth.agency
-          username: perthage
+          server: ftp.tomdotcom.au
+          username: tomddotco
           password: ${{ secrets.DEV_FTP_PASS }}
-          server-dir: h2ex/wp-content/themes
+          server-dir: cityphysio/wp-content/themes/

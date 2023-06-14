@@ -13,13 +13,14 @@ module.exports = {
 			colors: {
 				white: '#FFFFFF',
 				black: '#000000',
-				// brand:
-				// brandLight:
-				// brandDark:
+				brand: '#063E71',
+				brandLight: '#B9AC97',
+				brandGreen: '#399500',
+				brandBlue: '#00BFFF',
 			},
 			fontFamily: {
-				display: ['Inter', 'sans-serif'],
-				body: ['Inter', 'sans-serif'],
+				heading: ['Raleway', 'sans-serif'],
+				body: ['Poppins', 'sans-serif'],
 			},
 			screens: {
 				sm: '640px',
