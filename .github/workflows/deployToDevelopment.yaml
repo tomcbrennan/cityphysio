@@ -37,7 +37,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: 43.250.142.21
-          username: tomddotco
+          username: cityphysio@tomdotcom.au
           password: ${{ secrets.DEV_FTP_PASS }}
           server-dir: cityphysio/wp-content/themes/
           protocol: ftps
