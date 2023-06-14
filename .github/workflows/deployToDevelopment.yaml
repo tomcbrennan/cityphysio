@@ -40,3 +40,4 @@ jobs:
           username: tomddotco
           password: ${{ secrets.DEV_FTP_PASS }}
           server-dir: cityphysio/wp-content/themes/
+          protocol: ftps
