@@ -5,7 +5,8 @@
 @import './typography.css';
 @import './forms.css';
 
-html, body {
+html,
+body {
 	@apply overflow-x-hidden;
 }
 
@@ -36,8 +37,23 @@ section:last-of-type {
 	@apply relative !pb-0;
 }
 
-.page-id-29, .single-services {
+.page-id-29,
+.single-services {
 	.blob {
 		@apply hidden;
+	}
+}
+.menu-item:not(.menu-button) > a {
+	@apply relative;
+
+	&:after {
+		content: '';
+		@apply duration-300 absolute bottom-0 right-0 w-0 h-[2px] bg-brandGreen origin-right;
+	}
+
+	&:hover {
+		&:after {
+			@apply w-full left-0 mr-auto;
+		}
 	}
 }
