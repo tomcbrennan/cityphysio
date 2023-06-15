@@ -13,32 +13,13 @@
 			{% include 'partial/header.twig' %}
 		{% endblock %}
 		{% block hero %}
-			<div class="internal-banner container">
-				<div class="relative container overflow-hidden text-white mt-28 lg:mt-36 bg-[#AAAAAA] w-full h-48 lg:h-64 max-lg:pb-6 py-14 flex items-end rounded-[40px]">
-					{% if fields.banner.background %}
-						{% include 'partial/image.twig' with {
-							image: Image(fields.banner.background).src,
-							alt: fields.banner.background.alt,
-							class: 'object-cover object-center w-full h-full absolute top-0 left-0'
-						} %}
-					{% endif %}
-					<svg width="100%" height="100%" viewbox="0 0 1512 461" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full absolute top-0 left-0" preserveAspectRatio="none">
-						<rect width="1512" height="461" fill="#063E71" fill-opacity="0.8"/>
-					</svg>
-
-					<div class="relative w-full">
-						{% if fields.banner.custom_heading %}
-							<h1>{{ fields.banner.custom_heading }}</h1>
-						{% else %}
-							<h1>{{ post.title }}</h1>
-						{% endif %}
-					</div>
-				</div>
-			</div>
+			{% include "partial/internal-banner.twig" %}
 		{% endblock %}
 		<main id="content" role="main" class="relative">
 			{% block content %}
-				Sorry, no content
+				<section>
+					<h3 class="container text-[#D1D1D1]">No content found.</h3>
+				</section>
 			{% endblock %}
 		</main>
 		{% block footer %}

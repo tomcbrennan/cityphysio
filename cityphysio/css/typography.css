@@ -19,6 +19,17 @@ h6 {
 	@apply font-heading font-semibold;
 }
 
+main {
+	& h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-brand;
+	}
+}
+
 h1,
 .is-h1 {
 	@apply text-4xl leading-tight xl:text-6xl 2xl:text-7xl xl:leading-none;
@@ -35,17 +46,24 @@ h3,
 }
 
 h4,
-.is-h4,
+.is-h4 {
+	@apply leading-tight text-xl md:text-2xl xl:text-3xl 2xl:text-4xl;
+}
+
+
 h5,
-.is-h5,
+.is-h5 {
+	@apply leading-tight text-lg md:text-xl xl:text-2xl 2xl:text-3xl;
+}
+
 h6,
 .is-h6 {
-	@apply leading-tight text-xl md:text-2xl xl:text-3xl 2xl:text-4xl;
+	@apply leading-tight text-base md:text-lg xl:text-xl 2xl:text-2xl;
 }
 
 .button,
 .is-button, .menu-button > a {
-	@apply text-base md:text-lg duration-200 rounded-full py-3 px-6 flex items-center gap-4 bg-brandGreen border-2 border-brandGreen hover:bg-brand;
+	@apply text-base text-white w-fit md:text-lg duration-200 rounded-full py-3 px-6 flex items-center gap-4 bg-brandGreen border-2 border-brandGreen hover:bg-brand;
 }
 
 .menu-button > a {

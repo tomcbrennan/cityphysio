@@ -1,0 +1,21 @@
+<section class="global_faqs">
+	<div class="container">
+		<div class="accordion w-full lg:w-2/3">
+			{% for item in options.global_faqs %}
+				<span class="accordion-header">
+					<h3 class="!text-lg w-3/4">
+						{{ item.question }}
+					</h3>
+					{% include 'icons/chevron.twig' %}
+				</span>
+				<div class="accordion-content">
+					<div class="accordion-inner">
+						<p>
+							{{ item.answer }}
+						</p>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

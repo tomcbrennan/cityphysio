@@ -1,5 +1,9 @@
 .accordion-header {
-    @apply cursor-pointer pr-2 bg-transparent !text-black font-body font-bold text-lg py-4 md:py-6 flex gap-4 items-center justify-between hover:pl-2 duration-300;
+    @apply cursor-pointer pl-2 pr-2 border-2 border-transparent bg-transparent bg-white font-body font-bold text-lg py-4 md:py-6 flex gap-4 items-center justify-between hover:pl-4 duration-300;
+
+    h3 {
+        @apply text-black;
+    }
 }
 
 .accordion-header svg {
@@ -7,17 +11,17 @@
 }
 
 .accordion-header.active {
-    @apply bg-[#CBC9D4] pl-2;
+    @apply pl-4 border-brandBlue bg-[#F8F8F8];
 }
 
 .accordion-header.active svg {
-    @apply rotate-45;
+    @apply rotate-180;
 }
 
 .accordion-content {
     transition: max-height 0.4s ease;
-    @apply overflow-hidden max-h-0 border-b;
-    
+    @apply overflow-hidden max-h-0 border-b bg-white;
+
 }
 
 .accordion-content > .accordion-inner {

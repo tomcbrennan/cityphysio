@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class="relative">
-		{% include "icons/blob.twig" with { class: "absolute left-0 top-[25%]" } %}
+		{% include "icons/blob.twig" with { class: "blob absolute left-0 top-[25%]" } %}
 		{% if page_builder %}
 			{% for block in page_builder %}
 				<div data-block="{{ block.acf_fc_layout }}">

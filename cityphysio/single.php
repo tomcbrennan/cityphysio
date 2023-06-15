@@ -12,6 +12,10 @@
 $context         = Timber::context();
 $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
+if (function_exists('get_fields')) {
+    $context['fields'] = get_fields();
+}
+$context['page_builder'] = $context['fields']['page_builder'] ?? null;
 
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

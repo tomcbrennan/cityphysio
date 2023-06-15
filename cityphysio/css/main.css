@@ -29,9 +29,15 @@ html, body {
 }
 
 section {
-	@apply relative py-12 lg:py-20 2xl:py-32;
+	@apply relative py-6 lg:py-12 2xl:py-24;
 }
 
 section:last-of-type {
 	@apply relative !pb-0;
+}
+
+.page-id-29, .single-services {
+	.blob {
+		@apply hidden;
+	}
 }

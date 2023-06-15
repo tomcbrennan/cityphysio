@@ -28,6 +28,7 @@ $context['post'] = $timber_post;
 if (function_exists('get_fields')) {
     $context['fields'] = get_fields();
 }
+$context['page_builder'] = $context['fields']['page_builder'] ?? null;
 $templates = array( 'page-' . $timber_post->post_name . '.twig', 'page.twig' );
 
 if (is_front_page()) {
