@@ -313,6 +313,43 @@
                     "parent_repeater": "field_648b26495ef41"
                 }
             ]
+        },
+        {
+            "key": "field_648c78500b8ef",
+            "label": "Appointment Portal",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_648c78620b8f0",
+            "label": "Appointment Portal",
+            "name": "appointment_portal",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Link to appointment portal to be used across the site (not including menus).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -333,5 +370,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686840964
+    "modified": 1686927516
 }

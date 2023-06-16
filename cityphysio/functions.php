@@ -110,6 +110,15 @@ class TomDotCom extends Timber\Site
             'supports' => array('title', 'excerpt', 'page-builder'),
             'menu_icon' => 'dashicons-superhero',
         ));
+
+		register_post_type('team', array(
+            'label'  => 'Team',
+            'public' => true,
+            'has_archive' => false,
+            'supports' => array('title', 'thumbnail'),
+            'menu_icon' => 'dashicons-groups',
+			'rewrite'     => array( 'slug' => 'about-us' )
+        ));
 	}
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies()
@@ -145,6 +154,11 @@ class TomDotCom extends Timber\Site
 		// LOOPS
 		$context['services'] = Timber::get_posts(array(
             'post_type' => 'services',
+            'posts_per_page' => -1,
+            'post_status' => 'publish',
+        ));
+		$context['team'] = Timber::get_posts(array(
+            'post_type' => 'team',
             'posts_per_page' => -1,
             'post_status' => 'publish',
         ));

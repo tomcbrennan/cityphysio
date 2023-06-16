@@ -30,7 +30,7 @@ body {
 }
 
 section {
-	@apply relative py-6 lg:py-12 2xl:py-24;
+	@apply relative py-8 lg:py-12 2xl:py-20;
 }
 
 section:last-of-type {

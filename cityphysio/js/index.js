@@ -39,9 +39,10 @@ const toggleMenu = () => {
 	const menuButtons = document.querySelectorAll('[data-toggle-menu]')
 
 	menuButtons.forEach((btn) => {
-		btn.addEventListener('click', () =>
+		btn.addEventListener('click', () => {
 			document.body.classList.toggle('menuIsOpen')
-		)
+			document.documentElement.classList.toggle('overflow-hidden')
+		})
 	})
 }
 

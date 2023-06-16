@@ -9,7 +9,7 @@
         } %}
 		<div class="relative pt-12 container text-center flex flex-col gap-8 h-full text-white items-center justify-center">
 			<h1>Outstanding Care in Perth CBD</h1>
-			<h2 class="text-2xl font-normal">We help you feel better, faster.</h2>
+			<h2 class="is-h4 font-normal">We help you feel better, faster.</h2>
 			<a class="button" href="/specialised-services">View our services</a>
 		</div>
 	</div>
@@ -19,7 +19,7 @@
 	<section class="introduction relative">
 		{% include "icons/blob.twig" with { class: "absolute left-0 top-[25%]" } %}
 		<div class="container flex max-lg:flex-col gap-6 lg:gap-20">
-			<div data-animate class="block-content w-full">
+			<div class="block-content w-full">
 				<h3 class="text-brand">City Physiotherapy has been proudly operating in Perth CBD for over
 					<strong>30 years</strong>.</h3>
 				<p>City Physiotherapy provides high quality & prompt treatment in Perth CBD. Our office is located centrally in the CBD on St Georges Tce, near the corner of William St.</p>
@@ -35,20 +35,20 @@
 			<div class="bg-brand w-full p-8 rounded-3xl flex flex-col gap-8 text-center">
                 <h4 class="text-white">How can we help you?</h4>
 				<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
-					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
-						<div class="p-6 flex items-center justify-center">{% include "icons/appointment.twig" with { class: "h-20" } %}</div>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="{{ options.appointment_portal }}" target="_blank">
+						<div class="p-6 flex items-center justify-center">{% include "icons/appointment.twig" with { class: "h-12 md:h-20" } %}</div>
 						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Book an Appointment</span>
 					</a>
-					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
-						<div class="p-6 flex items-center justify-center">{% include "icons/services.twig" with { class: "h-20" } %}</div>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/specialised-services">
+						<div class="p-6 flex items-center justify-center">{% include "icons/services.twig" with { class: "h-12 md:h-20" } %}</div>
 						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Our Services</span>
 					</a>
-					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
-						<div class="p-6 flex items-center justify-center">{% include "icons/team.twig" with { class: "h-20" } %}</div>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/about-us">
+						<div class="p-6 flex items-center justify-center">{% include "icons/team.twig" with { class: "h-12 md:h-20" } %}</div>
 						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Meet the Team</span>
 					</a>
-					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="">
-						<div class="p-6 flex items-center justify-center">{% include "icons/contact.twig" with { class: "h-20" } %}</div>
+					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/contact-us">
+						<div class="p-6 flex items-center justify-center">{% include "icons/contact.twig" with { class: "h-12 md:h-20" } %}</div>
 						<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Contact Us</span>
 					</a>
 				</div>

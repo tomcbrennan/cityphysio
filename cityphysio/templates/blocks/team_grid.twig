@@ -1,0 +1,8 @@
+<section id="team" class="team_grid block-content container">
+	<h3>City Physiotherapy Team</h3>
+    <div class="grid gap-6 md:grid-cols-2">
+		{% for item in team %}
+			{% include "tease-team.twig" %}
+		{% endfor %}
+	</div>
+</section>

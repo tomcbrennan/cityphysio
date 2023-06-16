@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+{% block hero %}
+	<div class="container mt-28 lg:mt-40 2xl:mt-40 flex max-md:flex-col-reverse gap-6 md:gap-12 w-full jusitfy-between">
+		<div class="md:p-4 flex flex-col gap-4 rounded-3xl md:border-4 md:border-brandBlue md:w-1/3 h-fit">
+			{% if post.thumbnail %}
+				{% include 'partial/image.twig' with {
+                image: Image(post.thumbnail).src,
+                alt: post.thumbnail.alt,
+                class: 'object-cover object-top max-md:hidden aspect-4/3 md:aspect-1/1 rounded-2xl'
+            } %}
+			{% else %}
+				<div class="w-full max-md:hidden aspect-4/3 md:aspect-1/1 rounded-2xl bg-[#F4F4F4]"></div>
+			{% endif %}
+            <div class="bg-[#F0F0F0] block-content !gap-2 p-4 rounded-2xl">
+                <h5>Qualifications</h5>
+                {{ fields.qualifications }}
+            </div>
+		</div>
+		<div class="block-content md:w-2/3">
+			<h1 class="is-h2">{{ post.title }}</h1>
+			{{ fields.bio }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<section class="container">
+		<a href="/about-us#team" class="button mx-auto mt-5 md:mt-10">Back to Team</a>
+	</section>
+{% endblock %}

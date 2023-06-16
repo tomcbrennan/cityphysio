@@ -11,7 +11,7 @@
 }
 
 .accordion-header.active {
-    @apply pl-4 border-brandBlue bg-[#F8F8F8];
+    @apply pl-4 border-brandBlue bg-[#F8F8F8] rounded-b-2xl;
 }
 
 .accordion-header.active svg {

@@ -1,5 +1,5 @@
-<footer class="container">
-	<div class="flex items-center justify-center gap-10 my-10 sm:my-20">
+<footer>
+	<div class="container flex items-center justify-center gap-10 my-10 sm:my-20">
 		{% for item in options.certifications %}
 			{% include 'partial/image.twig' with {
         image: Image(item.certification).src,
@@ -8,38 +8,42 @@
       } %}
 		{% endfor %}
 	</div>
-	<div class="container w-full bg-brand rounded-t-[50px] py-8 md:py-14 lg:rounded-t-[100px]">
-		<div class="flex max-md:flex-col justify-between max-md:gap-8 gap-16">
-			{% if options.company_logo %}
-				<a href="{{ site.url }}" rel="home"><img src="{{ options.company_logo.url }}" class="w-32 lg:w-48 object-contain" alt=""></a>
-			{% endif %}
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:flex gap-10 lg:gap-20">
-				<div class="opening-hours flex flex-col gap-3 text-white font-light text-sm">
-					<span class="!font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Come see us</span>
-					{% if options.opening_hours %}
-						{{ options.opening_hours }}
-					{% endif %}
-				</div>
-				<div class="flex flex-col gap-3 text-white text-sm">
-					<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Navigation</span>
-					{% for item in footer_menu.get_items %}
-						<a class="font-light hover:underline" href="{{ item.link }}" target="{{ item.target }}">{{ item.title }}</a>
-					{% endfor %}
-				</div>
-				<div class="flex flex-col gap-3 text-white text-sm">
-					<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Get in touch</span>
-					<a class="font-light hover:underline" href="tel:{{ options.phone }}" target="_blank">{{ options.phone }}
-					</a>
-					<a class="font-light hover:underline" href="{{ options.address_google_maps }}" target="_blank">{{ options.address }}
-					</a>
+	<div class="w-full bg-brand py-8 md:py-14">
+		<div class="container">
+			<div class="flex max-md:flex-col justify-between max-md:gap-8 gap-16">
+				{% if options.company_logo %}
+					<a href="{{ site.url }}" rel="home"><img src="{{ options.company_logo.url }}" class="w-32 lg:w-48 object-contain" alt=""></a>
+				{% endif %}
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:flex gap-10 lg:gap-20">
+					<div class="opening-hours flex flex-col gap-3 text-white font-light text-sm">
+						<span class="!font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Come see us</span>
+						{% if options.opening_hours %}
+							{{ options.opening_hours }}
+						{% endif %}
+					</div>
+					<div class="flex flex-col gap-3 text-white text-sm">
+						<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Navigation</span>
+						{% for item in footer_menu.get_items %}
+							<a class="font-light hover:underline" href="{{ item.link }}" target="{{ item.target }}">{{ item.title }}</a>
+						{% endfor %}
+					</div>
+					<div class="flex flex-col gap-3 text-white text-sm">
+						<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Get in touch</span>
+						<a class="font-light hover:underline" href="tel:{{ options.phone }}" target="_blank">{{ options.phone }}
+						</a>
+						<a class="font-light hover:underline" href="{{ options.address_google_maps }}" target="_blank">{{ options.address }}
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="bg-brandBlue py-4 container text-xs flex max-sm:flex-col items-center justify-between">
-		<span>Copyright &copy;
-			{{ now|date('Y') }}
-			City Physiotherapy</span>
-		<a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
+	<div class="bg-brandBlue py-4">
+		<div class="container text-xs flex max-sm:flex-col items-center justify-between">
+			<span>Copyright &copy;
+				{{ now|date('Y') }}
+				City Physiotherapy</span>
+			<a href="https://tomdotcom.au" target="_blank">Built by Tom</a>
+		</div>
 	</div>
 </footer>

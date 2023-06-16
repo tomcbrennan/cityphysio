@@ -64,6 +64,15 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_648c69d873be2": {
+                    "key": "layout_648c69d873be2",
+                    "name": "team_grid",
+                    "label": "Team Grid",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -96,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1686841430
+    "modified": 1686923741
 }

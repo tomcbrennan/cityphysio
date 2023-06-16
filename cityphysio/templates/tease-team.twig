@@ -1,0 +1,21 @@
+<div class="flex sm:gap-4 max-sm:flex-col justify-between bg-white border-2 border-brandBlue rounded-2xl">
+	<div class="flex flex-col gap-6 max-sm:!pb-4 p-8">
+		<div class="flex flex-col gap-2">
+			<h3 class="is-h5">{{ item.title }}</h3>
+			<p>{{ item.role }}</p>
+		</div>
+		<a href="{{ item.link }}" class="button mt-auto">About
+			{{ item.title|split(' ')[0] }}</a>
+	</div>
+	<div class="p-4">
+		{% if item.thumbnail %}
+			{% include 'partial/image.twig' with {
+                image: Image(item.thumbnail).src,
+                alt: item.thumbnail.alt,
+                class: 'object-cover object-top aspect-1/1 rounded-xl w-full sm:w-48'
+            } %}
+		{% else %}
+			<div class="bg-[#F4F4F4] aspect-1/1 rounded-xl w-full sm:w-48"></div>
+		{% endif %}
+	</div>
+</div>
