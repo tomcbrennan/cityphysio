@@ -12,10 +12,12 @@
 			{% else %}
 				<div class="w-full max-md:hidden aspect-4/3 md:aspect-1/1 rounded-2xl bg-[#F4F4F4]"></div>
 			{% endif %}
-			<div class="bg-[#F0F0F0] block-content !gap-2 p-4 rounded-2xl">
-				<h5>Qualifications</h5>
-				{{ fields.qualifications }}
-			</div>
+			{% if fields.qualifications %}
+				<div class="bg-[#F0F0F0] block-content !gap-2 p-4 rounded-2xl">
+					<h5>Qualifications</h5>
+					{{ fields.qualifications }}
+				</div>
+			{% endif %}
 		</div>
 		<div class="block-content md:w-2/3">
 			<div class="flex flex-col gap-2">
