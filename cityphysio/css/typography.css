@@ -6,7 +6,8 @@ body {
 	@apply font-body;
 }
 
-body, .is-p {
+body,
+.is-p {
 	@apply leading-relaxed text-base 2xl:text-lg 2xl:leading-normal;
 }
 
@@ -50,7 +51,6 @@ h4,
 	@apply leading-tight text-xl md:text-2xl lg:text-3xl 2xl:text-4xl;
 }
 
-
 h5,
 .is-h5 {
 	@apply leading-tight text-lg md:text-xl lg:text-2xl 2xl:text-3xl;
@@ -62,8 +62,13 @@ h6,
 }
 
 .button,
-.is-button, .menu-button > a {
+.is-button,
+.menu-button > a {
 	@apply text-base text-white w-fit md:text-lg duration-200 rounded-full py-3 px-6 flex items-center gap-4 bg-brandGreen border-2 border-brandGreen hover:bg-brand;
+}
+
+.home .appointment-button {
+	animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s both;
 }
 
 .menu-button > a {
@@ -91,12 +96,25 @@ h6,
 	@apply list-decimal;
 }
 
-h1 > strong, h2 > strong, h3 > strong {
+h1 > strong,
+h2 > strong,
+h3 > strong {
 	@apply relative font-semibold;
 
 	&:after {
 		content: '';
 		background-image: url('data:image/svg+xml,<svg width="178" height="11" viewBox="0 0 178 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.0342896 10.5248C13.1561 7.10676 156.738 -4.44481 177.345 3.91835Z" fill="%23399500"/></svg>');
 		@apply absolute -bottom-3 left-0 bg-center bg-contain w-full h-[11px] bg-no-repeat;
+	}
+}
+
+@keyframes slide-in-bottom {
+	0% {
+		transform: translate(-50%, 100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(-50%, 0);
+		opacity: 1;
 	}
 }

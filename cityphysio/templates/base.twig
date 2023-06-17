@@ -25,6 +25,8 @@
 		{% block footer %}
 			{% include 'footer.twig' %}
 
+			<a href="{{ options.appointment_portal }}" class="button appointment-button lg:hidden !w-full !items-center !justify-center fixed bottom-0 !rounded-t-2xl !py-2 !rounded-b-none left-1/2 -translate-x-1/2" target="_blank">Book an Appointment</a>
+
 			{{ function('wp_footer') }}
 		{% endblock %}
 
