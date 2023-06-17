@@ -66,7 +66,7 @@ h6,
 	@apply text-base text-brand w-fit md:text-lg duration-200 rounded-full py-3 px-6 flex items-center gap-4 bg-brandBlue border-2 border-brandBlue hover:bg-brand hover:text-white;
 }
 
-.menu-button > a {
+.menu-button > a, .appointment-button {
 	@apply text-base text-white w-fit md:text-lg duration-200 rounded-full py-3 px-6 flex items-center gap-4 bg-brandGreen border-2 border-brandGreen hover:bg-brand;
 }
 
