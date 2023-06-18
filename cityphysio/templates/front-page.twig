@@ -8,9 +8,15 @@
             class: 'object-cover object-center w-full h-full absolute top-0 left-0'
         } %}
 		<div class="relative pt-12 container text-center flex flex-col gap-8 h-full text-white items-center justify-center">
-			<h1>{{ fields.home_banner.heading }}</h1>
-			<h2 class="is-h4 font-normal">{{ fields.home_banner.subheading }}</h2>
-			<a class="button" href="{{ fields.home_banner.button.link }}">{{ fields.home_banner.button.title }}</a>
+			{% if fields.home_banner.heading %}
+				<h1>{{ fields.home_banner.heading }}</h1>
+			{% endif %}
+			{% if fields.home_banner.subheading %}
+				<h2 class="is-h4 font-normal">{{ fields.home_banner.subheading }}</h2>
+			{% endif %}
+			{% if fields.home_banner.button %}
+				<a class="button" href="{{ fields.home_banner.button.link }}">{{ fields.home_banner.button.title }}</a>
+			{% endif %}
 		</div>
 	</div>
 
@@ -33,7 +39,7 @@
 	<section class="links !pt-0">
 		<div class="container">
 			<div class="bg-brand w-full p-8 rounded-3xl flex flex-col gap-8 text-center">
-                <h4 class="text-white">How can we help you?</h4>
+				<h4 class="text-white">How can we help you?</h4>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
 					<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="{{ options.appointment_portal }}" target="_blank">
 						<div class="p-6 flex items-center justify-center">{% include "icons/appointment.twig" with { class: "h-12 md:h-20" } %}</div>
