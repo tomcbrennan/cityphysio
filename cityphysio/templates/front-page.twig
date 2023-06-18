@@ -1,16 +1,16 @@
 {% extends "base.twig" %}
 
 {% block hero %}
-	<div class="relative h-[500px] md:h-[600px] lg:h-[750px] w-screen bg-brand rounded-b-[50px] lg:rounded-b-[100px] overflow-hidden">
+	<div class="relative h-[500px] md:h-[600px] lg:h-[700px] w-screen bg-brand rounded-b-[50px] lg:rounded-b-[100px] overflow-hidden">
 		{% include 'partial/image.twig' with {
             image: Image(fields.home_banner.background).src,
             alt: fields.home_banner.background.alt,
             class: 'object-cover object-center w-full h-full absolute top-0 left-0'
         } %}
 		<div class="relative pt-12 container text-center flex flex-col gap-8 h-full text-white items-center justify-center">
-			<h1>Outstanding Care in Perth CBD</h1>
-			<h2 class="is-h4 font-normal">We help you feel better, faster.</h2>
-			<a class="button" href="/specialised-services">View our services</a>
+			<h1>{{ fields.home_banner.heading }}</h1>
+			<h2 class="is-h4 font-normal">{{ fields.home_banner.subheading }}</h2>
+			<a class="button" href="{{ fields.home_banner.button.link }}">{{ fields.home_banner.button.title }}</a>
 		</div>
 	</div>
 
