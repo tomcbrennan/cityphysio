@@ -26,14 +26,13 @@
 		{% include "icons/blob.twig" with { class: "absolute left-0 top-[25%]" } %}
 		<div class="container flex max-lg:flex-col gap-6 lg:gap-20">
 			<div class="block-content w-full">
-				<h3 class="text-brand">City Physiotherapy has been proudly operating in Perth CBD for over
-					<strong>30 years</strong>.</h3>
-				<p>City Physiotherapy provides high quality & prompt treatment in Perth CBD. Our office is located centrally in the CBD on St Georges Tce, near the corner of William St.</p>
-				<p>When you come to City Physiotherapy, you can expect a welcoming, professional environment. Our highly skilled and professional physiotherapists will provide individualised consultations and treatment along with information about the care of your condition to ensure a prompt return to sport & normal activities</p>
+				{{ fields.home_introduction.content }}
 			</div>
-			<div class="bg-white lg:w-1/2 border-2 border-brandBlue rounded-3xl p-8 text-xl flex items-center justify-center">
-				<em>"Our patients expect and deserve optimum care for their injury or pain. We provide this level of care and constantly strive to excel in rendering the best treatment possible to each individual that comes to us.”</em>
-			</div>
+			{% if fields.home_introduction.quote %}
+				<div class="bg-white lg:w-1/2 border-2 border-brandBlue rounded-3xl p-8 text-xl flex items-center justify-center">
+					<em>"Our patients expect and deserve optimum care for their injury or pain. We provide this level of care and constantly strive to excel in rendering the best treatment possible to each individual that comes to us.”</em>
+				</div>
+			{% endif %}
 		</div>
 	</section>
 	<section class="links !pt-0">
