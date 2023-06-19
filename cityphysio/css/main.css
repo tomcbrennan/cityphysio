@@ -31,7 +31,7 @@ body {
 
 .single-services {
 	[data-block]:first-of-type section {
-		@apply !pt-0;
+		@apply !pt-0 max-md:-mt-8;
 	}
 }
 
