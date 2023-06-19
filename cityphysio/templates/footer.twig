@@ -11,7 +11,13 @@
 	<div class="w-full bg-brand py-8 md:py-14">
 		<div class="container">
 			<div class="flex max-md:flex-col items-start justify-between max-md:gap-8 gap-16">
-				{% include "icons/logo.twig" with { class: "w-32 lg:w-48" } %}
+				<div class="flex flex-col gap-10">
+					{% include "icons/logo.twig" with { class: "w-32 lg:w-48" } %}
+					<div class="flex items-center gap-4">
+						<span class="text-sm text-white">Follow us</span>
+						<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" with { class: "fill-white" } %}</a>
+					</div>
+				</div>
 				<div class="grid grid-cols-1 sm:grid-cols-2 md:flex gap-10 lg:gap-20">
 					<div class="opening-hours flex flex-col gap-3 text-white font-light text-sm">
 						<span class="!font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Come see us</span>
