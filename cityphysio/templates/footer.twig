@@ -10,10 +10,8 @@
 	</div>
 	<div class="w-full bg-brand py-8 md:py-14">
 		<div class="container">
-			<div class="flex max-md:flex-col justify-between max-md:gap-8 gap-16">
-				{% if options.company_logo %}
-					<a href="{{ site.url }}" rel="home"><img src="{{ options.company_logo.url }}" class="w-32 lg:w-48 object-contain" alt=""></a>
-				{% endif %}
+			<div class="flex max-md:flex-col items-start justify-between max-md:gap-8 gap-16">
+				{% include "icons/logo.twig" with { class: "w-32 lg:w-48" } %}
 				<div class="grid grid-cols-1 sm:grid-cols-2 md:flex gap-10 lg:gap-20">
 					<div class="opening-hours flex flex-col gap-3 text-white font-light text-sm">
 						<span class="!font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Come see us</span>
