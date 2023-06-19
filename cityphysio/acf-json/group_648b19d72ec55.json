@@ -104,6 +104,15 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_649051b63083c": {
+                    "key": "layout_649051b63083c",
+                    "name": "links",
+                    "label": "Links",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_649039717c012": {
                     "key": "layout_649039717c012",
                     "name": "contact_details",
@@ -149,5 +158,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687175609
+    "modified": 1687179708
 }

@@ -7,9 +7,11 @@ gsap.registerPlugin(ScrollTrigger)
  * Apply animations to elements
  */
 export default function initAnimateOnScroll() {
-	const elements = document.querySelectorAll('[data-animate]')
+	const elementsUp = document.querySelectorAll('[data-animate-up]')
+	const elementsLeft = document.querySelectorAll('[data-animate-left]')
+	const elementsStagger = gsap.utils.toArray('[data-animate-stagger] > *')
 
-	elements.forEach((element) => {
+	elementsUp.forEach((element) => {
 		const settings = {
 			scrollTrigger: {
 				trigger: element,
@@ -19,8 +21,31 @@ export default function initAnimateOnScroll() {
 			y: 16,
 			opacity: 0,
 		}
-
-		// Animation time
 		gsap.from(element, settings)
+	})
+
+	elementsLeft.forEach((element) => {
+		const settings = {
+			scrollTrigger: {
+				trigger: element,
+				start: 'top bottom-=25%',
+				duration: 300,
+			},
+			x: 16,
+			opacity: 0,
+		}
+		gsap.from(element, settings)
+	})
+
+	document.querySelectorAll('[data-animate-stagger]').forEach((stagger) => {
+		gsap.from(elementsStagger, {
+			scrollTrigger: {
+				trigger: stagger,
+			},
+			x: 20,
+			opacity: 0,
+			delay: 0.2,
+			stagger: 0.1,
+		})
 	})
 }

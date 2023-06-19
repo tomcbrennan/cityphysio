@@ -1,5 +1,6 @@
 import animateOnScroll from './utils/animate-on-scroll'
 import initAccordions from './components/accordions'
+import gsap from 'gsap'
 
 document.addEventListener('DOMContentLoaded', () => {
 	toggleMenu()
@@ -37,11 +38,25 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const toggleMenu = () => {
 	const menuButtons = document.querySelectorAll('[data-toggle-menu]')
-
 	menuButtons.forEach((btn) => {
 		btn.addEventListener('click', () => {
+			const tl = gsap.timeline({ paused: true })
+			const menuItems = document.querySelectorAll('[data-mobile-menu-item]')
+			menuItems.forEach((menuItem) => {
+				gsap.set(menuItem, { opacity: 0, y: -10 })
+				setTimeout(() => {
+					tl.to(menuItem, { opacity: 1, y: 0, duration: 0.1 })
+				}, 200)
+			})
+
 			document.body.classList.toggle('menuIsOpen')
 			document.documentElement.classList.toggle('overflow-hidden')
+
+			if (document.body.classList.contains('menuIsOpen')) {
+				tl.play()
+			} else {
+				tl.reverse()
+			}
 		})
 	})
 }
