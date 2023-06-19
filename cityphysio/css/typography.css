@@ -78,7 +78,7 @@ h6,
 	@apply !text-base md:!text-lg;
 }
 
-.internal-banner h1 {
+.internal-banner h1, .service-banner h1 {
 	@apply is-h2 w-4/5;
 }
 

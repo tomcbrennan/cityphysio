@@ -29,6 +29,12 @@ body {
 	@apply translate-x-0;
 }
 
+.single-services {
+	[data-block]:first-of-type section {
+		@apply !pt-0;
+	}
+}
+
 section {
 	@apply relative py-8 lg:py-12 2xl:py-20;
 }

@@ -1,5 +1,9 @@
 {% extends "page.twig" %}
 
+{% block hero %}
+    {% include "partial/service-banner.twig" %}
+{% endblock %}
+
 {% block content %}
 	<div class="relative">
 		{% if page_builder %}
