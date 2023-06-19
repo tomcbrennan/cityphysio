@@ -47,6 +47,36 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6490419c4e72c": {
+                    "key": "layout_6490419c4e72c",
+                    "name": "text_short_width",
+                    "label": "Text (Short Width)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6490419c4e72d",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_648b1c9a51061": {
                     "key": "layout_648b1c9a51061",
                     "name": "services_grid",
@@ -119,5 +149,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687173495
+    "modified": 1687175609
 }
