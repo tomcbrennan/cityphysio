@@ -36,7 +36,7 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
-          server: 194.223.190.73
+          server: 43.250.142.31
           username: tomdotcom@cityphysio.net
           password: ${{ secrets.PROD_FTP_PASS }}
           server-dir: wp-content/themes/
