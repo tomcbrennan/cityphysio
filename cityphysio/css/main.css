@@ -33,8 +33,18 @@ section {
 	@apply relative py-8 lg:py-12 2xl:py-20;
 }
 
-section:last-of-type {
+body:not(.home) section:last-of-type {
 	@apply relative !pb-0;
+}
+
+.home {
+	section:not(:first-of-type, :last-of-type){
+		@apply !pt-0;
+	}
+
+	section:last-of-type {
+		@apply max-md:!pt-0 max-md:!pb-0;
+	}
 }
 
 .page-id-29,
@@ -43,8 +53,8 @@ section:last-of-type {
 		@apply hidden;
 	}
 }
-.menu-item:not(.menu-button) > a {
-	@apply relative;
+.menu-item:not(.menu-button) > a, .underline-link {
+	@apply relative w-fit;
 
 	&:after {
 		content: '';

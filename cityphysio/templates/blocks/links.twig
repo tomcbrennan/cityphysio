@@ -1,0 +1,25 @@
+<section class="links">
+	<div class="container">
+		<div class="bg-brand w-full p-8 rounded-3xl flex flex-col gap-8 text-center">
+			<h4 class="text-white">How can we help you?</h4>
+			<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
+				<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="{{ options.appointment_portal }}" target="_blank">
+					<div class="p-6 flex items-center justify-center">{% include "icons/appointment.twig" with { class: "h-12 md:h-20" } %}</div>
+					<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Book an Appointment</span>
+				</a>
+				<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/specialised-services">
+					<div class="p-6 flex items-center justify-center">{% include "icons/services.twig" with { class: "h-12 md:h-20" } %}</div>
+					<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Our Services</span>
+				</a>
+				<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/about-us">
+					<div class="p-6 flex items-center justify-center">{% include "icons/team.twig" with { class: "h-12 md:h-20" } %}</div>
+					<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Meet the Team</span>
+				</a>
+				<a class="bg-brandBlue duration-200 hover:bg-white rounded-2xl w-full flex flex-col overflow-hidden" href="/contact-us">
+					<div class="p-6 flex items-center justify-center">{% include "icons/contact.twig" with { class: "h-12 md:h-20" } %}</div>
+					<span class="bg-brandGreen p-4 text-center text-white font-semibold font-heading">Contact Us</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
