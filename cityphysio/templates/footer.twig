@@ -22,14 +22,14 @@
 					<div class="flex flex-col gap-3 text-white text-sm">
 						<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Navigation</span>
 						{% for item in footer_menu.get_items %}
-							<a class="font-light hover:underline" href="{{ item.link }}" target="{{ item.target }}">{{ item.title }}</a>
+							<a class="font-light underline-link" href="{{ item.link }}" target="{{ item.target }}">{{ item.title }}</a>
 						{% endfor %}
 					</div>
 					<div class="flex flex-col gap-3 text-white text-sm">
 						<span class="font-medium max-md:w-fit pb-1 border-b border-b-brandGreen">Get in touch</span>
-						<a class="font-light hover:underline" href="tel:{{ options.phone }}" target="_blank">{{ options.phone }}
+						<a class="font-light underline-link" href="tel:{{ options.phone }}">{{ options.phone }}
 						</a>
-						<a class="font-light hover:underline" href="{{ options.address_google_maps }}" target="_blank">{{ options.address }}
+						<a class="font-light underline-link" href="{{ options.address_google_maps }}" target="_blank">{{ options.address }}
 						</a>
 					</div>
 				</div>

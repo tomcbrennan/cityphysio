@@ -1,1 +1,17 @@
-/* Form styles go here */
+input:not([hidden]):not(.customRadio),
+textarea,
+select {
+	@apply bg-white border-2 border-[#DDDDDD] rounded-lg px-4 placeholder:text-black/30 h-12 flex items-center w-full;
+}
+
+input.customRadio:checked {
+	@apply border-4 border-[#F9F9F9];
+}
+
+.input-wrapper:has([required]) label {
+	@apply relative after:content-['*'] after:text-brand after:px-1;
+}
+
+.gform_required_legend {
+    @apply text-xs mb-6;
+}

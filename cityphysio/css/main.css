@@ -53,12 +53,19 @@ body:not(.home) section:last-of-type {
 		@apply hidden;
 	}
 }
+
+.page-id-31 {
+	.blob:last-of-type {
+		@apply hidden;
+	}
+}
+
 .menu-item:not(.menu-button) > a, .underline-link {
 	@apply relative w-fit;
 
 	&:after {
 		content: '';
-		@apply duration-300 absolute bottom-0 right-0 w-0 h-[2px] bg-brandGreen origin-right;
+		@apply duration-300 absolute -bottom-[2px] right-0 w-0 h-[2px] bg-brandGreen origin-right;
 	}
 
 	&:hover {
@@ -66,4 +73,8 @@ body:not(.home) section:last-of-type {
 			@apply w-full left-0 mr-auto;
 		}
 	}
+}
+
+footer .underline-link:after {
+	@apply !h-[1px];
 }

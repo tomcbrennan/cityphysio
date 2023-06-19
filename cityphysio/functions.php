@@ -213,4 +213,11 @@ function disable_embeds_filter_oembed_response_data_($data)
 	return $data;
 }
 
+// GFORM BUTTON
+
+add_filter( 'gform_submit_button', 'form_submit_button', 10, 2 );
+function form_submit_button( $button, $form ) {
+    return "<button class='button gform_button' id='gform_submit_button_{$form['id']}'><span>Submit</span></button>";
+}
+
 new TomDotCom();
