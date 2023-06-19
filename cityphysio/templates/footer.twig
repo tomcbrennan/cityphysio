@@ -14,8 +14,11 @@
 				<div class="flex flex-col gap-10">
 					{% include "icons/logo.twig" with { class: "w-32 lg:w-48" } %}
 					<div class="flex items-center gap-4">
-						<span class="text-sm text-white">Follow us</span>
-						<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" with { class: "fill-white" } %}</a>
+						{% if options.facebook %}
+							<span class="text-sm text-white">Follow us</span>
+							<a href="{{ options.facebook }}" target="_blank">{% include "icons/facebook.twig" with { class: "fill-white" } %}</a>
+						{% endif %}
+
 					</div>
 				</div>
 				<div class="grid grid-cols-1 sm:grid-cols-2 md:flex gap-10 lg:gap-20">
