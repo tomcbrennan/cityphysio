@@ -15,7 +15,7 @@ export default function initAnimateOnScroll() {
 		const settings = {
 			scrollTrigger: {
 				trigger: element,
-				start: 'top bottom-=15%',
+				start: 'top bottom-=10%',
 				duration: 300,
 			},
 			y: 16,
@@ -28,7 +28,7 @@ export default function initAnimateOnScroll() {
 		const settings = {
 			scrollTrigger: {
 				trigger: element,
-				start: 'top bottom-=15%',
+				start: 'top bottom-=10%',
 				duration: 300,
 			},
 			x: 16,
@@ -41,7 +41,7 @@ export default function initAnimateOnScroll() {
 		gsap.from(elementsStagger, {
 			scrollTrigger: {
 				trigger: stagger,
-				start: 'top bottom-=15%',
+				start: 'top bottom-=10%',
 			},
 			x: 20,
 			opacity: 0,
