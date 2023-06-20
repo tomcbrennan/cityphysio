@@ -1,14 +1,22 @@
 {% extends "base.twig" %}
 
 {% block hero %}
-	<div class="relative h-[550px] lg:h-[700px] w-screen bg-brand rounded-b-[50px] lg:rounded-b-[100px] overflow-hidden">
+	<div class="relative h-[550px] lg:h-[675px] 2xl:h-[75vh] w-screen bg-brand rounded-b-[50px] lg:rounded-b-[100px] overflow-hidden">
 		{% include 'partial/image.twig' with {
             image: Image(fields.home_banner.background).src,
             alt: fields.home_banner.background.alt,
-            class: 'object-cover object-top md:object-center w-full h-full absolute top-0 left-0'
+            class: 'object-cover object-center max-sm:hidden w-full h-full absolute top-0 left-0'
         } %}
+		{% if fields.home_banner.background_mobile %}
+			{% include 'partial/image.twig' with {
+            image: Image(fields.home_banner.background_mobile).src,
+            alt: fields.home_banner.background_mobile.alt,
+            class: 'object-cover object-center sm:hidden w-full h-full absolute top-0 left-0'
+        } %}
+		{% endif %}
+
 		<div class="bg-brand bg-opacity-75 absolute top-0 left-0 w-full h-full"></div>
-		<div class="relative pt-12 container text-center flex flex-col gap-8 h-full text-white items-center justify-center">
+		<div class="relative pt-12 container flex flex-col max-lg:-mt-12 max-lg:gap-4 gap-7 2xl:gap-8 h-full text-white items-center max-sm:text-center sm:items-start justify-center">
 			{% if fields.home_banner.heading %}
 				<h1 data-animate-up>{{ fields.home_banner.heading }}</h1>
 			{% endif %}
@@ -50,7 +58,8 @@
 					<p class="text-xl text-brand font-semibold">Address</p>
 					<div>{{ options.address }}</div>
 				</div>
-				<a href="/contact-us" class="ml-6 underline-link flex items-center gap-2 font-medium">Fill out our online enquiry form {% include "icons/chevron.twig" with { class: "!w-4 !h-4 -rotate-90" } %}</a>
+				<a href="/contact-us" class="ml-6 underline-link flex items-center gap-2 font-medium">Fill out our online enquiry form
+					{% include "icons/chevron.twig" with { class: "!w-4 !h-4 -rotate-90" } %}</a>
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.2144494614254!2d115.85433407606126!3d-31.955078422500225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a32bad5ec60b1f3%3A0xa64f8a2e90dc8bab!2sCity%20Physiotherapy%20Centre!5e0!3m2!1sen!2sau!4v1687170413068!5m2!1sen!2sau" class="rounded-2xl" width="100%" height="152" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			{% if fields.home_contact.image %}
